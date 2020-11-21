@@ -6,17 +6,17 @@
  * @param string $more "Read more" excerpt string.
  * @return string (Maybe) modified "read more" excerpt string.
  */
-if (!function_exists('wpfunc_custom_excerpt_more')) {
-	function wpfunc_custom_excerpt_more($more)
+if (!function_exists('bandq_custom_excerpt_more')) {
+	function bandq_custom_excerpt_more($more)
 	{
-		$more_text = wpfunc_get_option('blog_custom_excerpt');
+		$more_text = bandq_get_option('blog_custom_excerpt');
 		if (!$more_text) {
 			$more_text = '';
 		}
 		return $more_text;
 	}
 
-	add_filter('excerpt_more', 'wpfunc_custom_excerpt_more');
+	add_filter('excerpt_more', 'bandq_custom_excerpt_more');
 }
 
 /**
@@ -25,11 +25,11 @@ if (!function_exists('wpfunc_custom_excerpt_more')) {
  * @param int $length Excerpt length.
  * @return int (Maybe) modified excerpt length.
  */
-if (!function_exists('wpfunc_custom_permalink_length')) {
-	function wpfunc_custom_permalink_length($length)
+if (!function_exists('bandq_custom_permalink_length')) {
+	function bandq_custom_permalink_length($length)
 	{
-		$setting_length = wpfunc_get_option('blog_custom_excerp_length');
-		$setting_length = apply_filters('wptext_custom_permalink_length', $setting_length);
+		$setting_length = bandq_get_option('blog_custom_excerp_length');
+		$setting_length = apply_filters('bandq_custom_permalink_length', $setting_length);
 
 		if ($setting_length) {
 			$length = intval($setting_length);
@@ -39,5 +39,5 @@ if (!function_exists('wpfunc_custom_permalink_length')) {
 		return $length;
 	}
 
-	add_filter('excerpt_length', 'wpfunc_custom_permalink_length');
+	add_filter('excerpt_length', 'bandq_custom_permalink_length');
 }

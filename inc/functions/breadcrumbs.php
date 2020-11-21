@@ -9,23 +9,23 @@
  *
  * @return void
  */
-function wpfunc_breadcrumbs($args = '')
+function bandq_breadcrumbs($args = '')
 {
 	if (is_front_page())
 		return;
 
 	$args = wp_parse_args($args, array(
 		'separator'         => '&rsaquo;',
-		'home_label'        => esc_html__('Home', 'wpf_domain'),
+		'home_label'        => esc_html__('Home', 'bandq'),
 		'home_class'        => 'home',
-		'before'            => '<span class="before">' . esc_html__('You are here: ', 'wpf_domain') . '</span>',
+		'before'            => '<span class="before">' . esc_html__('You are here: ', 'bandq') . '</span>',
 		'before_item'       => '',
 		'after_item'        => '',
 		'taxonomy'          => 'category',
 		'display_last_item' => true,
 	));
 
-	$args = apply_filters('wptext_breadcrumbs_args', $args);
+	$args = apply_filters('bandq_breadcrumbs_args', $args);
 
 	$items = array();
 
@@ -61,7 +61,7 @@ function wpfunc_breadcrumbs($args = '')
 		// Terms
 		$terms   = get_the_terms(get_the_ID(), $args['taxonomy']);
 		$term    = current($terms);
-		$terms   = wpfunc_get_term_parents($term->term_id, $args['taxonomy']);
+		$terms   = bandq_get_term_parents($term->term_id, $args['taxonomy']);
 		$terms[] = $term->term_id;
 		foreach ($terms as $term_id) {
 			$term    = get_term($term_id, $args['taxonomy']);
@@ -70,7 +70,7 @@ function wpfunc_breadcrumbs($args = '')
 		if ($args['display_last_item'])
 			$items[] = sprintf($item_text_tpl, get_the_title());
 	} elseif (is_page()) {
-		$pages = wpfunc_get_post_parents(get_queried_object_id());
+		$pages = bandq_get_post_parents(get_queried_object_id());
 		foreach ($pages as $page) {
 			$items[] = sprintf($item_tpl, get_permalink($page), get_the_title($page));
 		}
@@ -78,7 +78,7 @@ function wpfunc_breadcrumbs($args = '')
 			$items[] = sprintf($item_text_tpl, get_the_title());
 	} elseif (is_tax() || is_category() || is_tag()) {
 		$current_term = get_queried_object();
-		$terms        = wpfunc_get_term_parents(get_queried_object_id(), $current_term->taxonomy);
+		$terms        = bandq_get_term_parents(get_queried_object_id(), $current_term->taxonomy);
 		foreach ($terms as $term_id) {
 			$term    = get_term($term_id, $current_term->taxonomy);
 			$items[] = sprintf($item_tpl, get_category_link($term_id), $term->name);
@@ -86,16 +86,16 @@ function wpfunc_breadcrumbs($args = '')
 		if ($args['display_last_item'])
 			$items[] = sprintf($item_text_tpl, $current_term->name);
 	} elseif (is_search()) {
-		$items[] = sprintf($item_text_tpl, sprintf(esc_html__('Search results for &quot;%s&quot;', 'wpf_domain'), get_search_query()));
+		$items[] = sprintf($item_text_tpl, sprintf(esc_html__('Search results for &quot;%s&quot;', 'bandq'), get_search_query()));
 	} elseif (is_404()) {
-		$items[] = sprintf($item_text_tpl, esc_html__('Not Found', 'wpf_domain'));
+		$items[] = sprintf($item_text_tpl, esc_html__('Not Found', 'bandq'));
 	} elseif (is_author()) {
 		// Queue the first post, that way we know what author we're dealing with (if that is the case).
 		the_post();
 		$items[] = sprintf(
 			$item_text_tpl,
 			sprintf(
-				esc_html__('Author Archives: %s', 'wpf_domain'),
+				esc_html__('Author Archives: %s', 'bandq'),
 				'<span class="vcard"><a class="url fn n" href="' . get_author_posts_url(get_the_author_meta('ID')) . '" title="' . esc_attr(get_the_author()) . '" rel="me">' . get_the_author() . '</a></span>'
 			)
 		);
@@ -103,22 +103,22 @@ function wpfunc_breadcrumbs($args = '')
 	} elseif (is_day()) {
 		$items[] = sprintf(
 			$item_text_tpl,
-			sprintf(esc_html__('Daily Archives: %s', 'wpf_domain'), get_the_date())
+			sprintf(esc_html__('Daily Archives: %s', 'bandq'), get_the_date())
 		);
 	} elseif (is_month()) {
 		$items[] = sprintf(
 			$item_text_tpl,
-			sprintf(esc_html__('Monthly Archives: %s', 'wpf_domain'), get_the_date('F Y'))
+			sprintf(esc_html__('Monthly Archives: %s', 'bandq'), get_the_date('F Y'))
 		);
 	} elseif (is_year()) {
 		$items[] = sprintf(
 			$item_text_tpl,
-			sprintf(esc_html__('Yearly Archives: %s', 'wpf_domain'), get_the_date('Y'))
+			sprintf(esc_html__('Yearly Archives: %s', 'bandq'), get_the_date('Y'))
 		);
 	} else {
 		$items[] = sprintf(
 			$item_text_tpl,
-			sprintf(esc_html__('Archives', 'wpf_domain'))
+			sprintf(esc_html__('Archives', 'bandq'))
 		);
 	}
 
@@ -135,7 +135,7 @@ function wpfunc_breadcrumbs($args = '')
  *
  * @return array Array of parent terms' IDs.
  */
-function wpfunc_get_term_parents($term_id = '', $taxonomy = 'category')
+function bandq_get_term_parents($term_id = '', $taxonomy = 'category')
 {
 	// Set up some default arrays.
 	$list = array();
@@ -168,7 +168,7 @@ function wpfunc_get_term_parents($term_id = '', $taxonomy = 'category')
  *
  * @return array Array of parent posts' IDs.
  */
-function wpfunc_get_post_parents($post_id = '')
+function bandq_get_post_parents($post_id = '')
 {
 	// Set up some default array.
 	$list = array();

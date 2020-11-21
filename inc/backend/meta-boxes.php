@@ -15,32 +15,32 @@
  *
  * @return array
  */
-function wpfunc_register_meta_boxes($meta_boxes)
+function bandq_register_meta_boxes($meta_boxes)
 {
 	// Post format
 	$meta_boxes[] = array(
 		'id'       => 'post-format-settings',
-		'title'    => __('MetaBox Settings', 'wpf_domain'),
+		'title'    => __('MetaBox Settings', 'bandq'),
 		'pages'    => array('post'),
 		'context'  => 'normal',
 		'priority' => 'high',
 		'autosave' => true,
 		'fields'   => array(
 			array(
-				'name'             => __('Image', 'wpf_domain'),
+				'name'             => __('Image', 'bandq'),
 				'id'               => 'mb_image',
 				'type'             => 'image_advanced',
 				'class'            => 'image',
 				'max_file_uploads' => 1,
 			),
 			array(
-				'name'  => __('Gallery', 'wpf_domain'),
+				'name'  => __('Gallery', 'bandq'),
 				'id'    => 'mb_images',
 				'type'  => 'image_advanced',
 				'class' => 'gallery',
 			),
 			array(
-				'name'  => __('Audio', 'wpf_domain'),
+				'name'  => __('Audio', 'bandq'),
 				'id'    => 'mb_audio',
 				'type'  => 'textarea',
 				'cols'  => 20,
@@ -48,7 +48,7 @@ function wpfunc_register_meta_boxes($meta_boxes)
 				'class' => 'audio',
 			),
 			array(
-				'name'  => __('Video', 'wpf_domain'),
+				'name'  => __('Video', 'bandq'),
 				'id'    => 'mb_video',
 				'type'  => 'textarea',
 				'cols'  => 20,
@@ -56,7 +56,7 @@ function wpfunc_register_meta_boxes($meta_boxes)
 				'class' => 'video',
 			),
 			array(
-				'name'  => __('Link', 'wpf_domain'),
+				'name'  => __('Link', 'bandq'),
 				'id'    => 'mb_url',
 				'type'  => 'textarea',
 				'cols'  => 20,
@@ -64,7 +64,7 @@ function wpfunc_register_meta_boxes($meta_boxes)
 				'class' => 'link',
 			),
 			array(
-				'name'  => __('Text', 'wpf_domain'),
+				'name'  => __('Text', 'bandq'),
 				'id'    => 'mb_url_text',
 				'type'  => 'textarea',
 				'cols'  => 20,
@@ -72,7 +72,7 @@ function wpfunc_register_meta_boxes($meta_boxes)
 				'class' => 'link',
 			),
 			array(
-				'name'  => __('Quote', 'wpf_domain'),
+				'name'  => __('Quote', 'bandq'),
 				'id'    => 'mb_quote',
 				'type'  => 'textarea',
 				'cols'  => 20,
@@ -85,53 +85,53 @@ function wpfunc_register_meta_boxes($meta_boxes)
 	// Dispaly Settings
 	$meta_boxes[] = array(
 		'id'       => 'display-settings',
-		'title'    => __('Display Settings', 'wpf_domain'),
+		'title'    => __('Display Settings', 'bandq'),
 		'pages'    => array('page'),
 		'context'  => 'normal',
 		'priority' => 'high',
 		'fields'   => array(
 			array(
-				'name' => __('Title', 'wpf_domain'),
+				'name' => __('Title', 'bandq'),
 				'id'   => 'mb_heading_title',
 				'type' => 'heading',
 			),
 			array(
-				'name'  => __('Hide The Title', 'wpf_domain'),
+				'name'  => __('Hide The Title', 'bandq'),
 				'id'    => 'mb_hide_title',
 				'type'  => 'checkbox',
 				'std'   => false,
 			),
 			array(
-				'name' => __('Breadcrumb', 'wpf_domain'),
+				'name' => __('Breadcrumb', 'bandq'),
 				'id'   => 'mb_heading_breadcrumb',
 				'type' => 'heading',
 			),
 			array(
-				'name'  => __('Hide Breadcrumb', 'wpf_domain'),
+				'name'  => __('Hide Breadcrumb', 'bandq'),
 				'id'    => 'mb_hide_breadcrumb',
 				'type'  => 'checkbox',
 				'std'   => false,
 			),
 			array(
-				'name' => __('Layout & Styles', 'wpf_domain'),
+				'name' => __('Layout & Styles', 'bandq'),
 				'id'   => 'mb_heading_layout',
 				'type' => 'heading',
 			),
 			array(
-				'name'  => __('Custom Layout', 'wpf_domain'),
+				'name'  => __('Custom Layout', 'bandq'),
 				'id'    => 'mb_custom_layout',
 				'type'  => 'checkbox',
 				'std'   => false,
 			),
 			array(
-				'name'            => __('Layout', 'wpf_domain'),
+				'name'            => __('Layout', 'bandq'),
 				'id'              => 'mb_layout',
 				'type'            => 'image_select',
 				'class'           => 'custom-layout',
 				'options'         => array(
-					'full-content'    => WPF_URL . '/inc/libs/theme-options/img/sidebars/empty.png',
-					'sidebar-content' => WPF_URL . '/inc/libs/theme-options/img/sidebars/single-left.png',
-					'content-sidebar' => WPF_URL . '/inc/libs/theme-options/img/sidebars/single-right.png',
+					'full-content'    => BANDQ_URL . '/inc/libs/theme-options/img/sidebars/empty.png',
+					'sidebar-content' => BANDQ_URL . '/inc/libs/theme-options/img/sidebars/single-left.png',
+					'content-sidebar' => BANDQ_URL . '/inc/libs/theme-options/img/sidebars/single-right.png',
 				),
 			),
 			array(
@@ -156,13 +156,13 @@ function wpfunc_register_meta_boxes($meta_boxes)
 				'std' => '1',
 			),
 			array(
-				'name'  => __('Custom CSS', 'wpf_domain'),
+				'name'  => __('Custom CSS', 'bandq'),
 				'id'    => 'mb_custom_css',
 				'type'  => 'textarea',
 				'std'   => false,
 			),
 			array(
-				'name'  => __('Custom JavaScript', 'wpf_domain'),
+				'name'  => __('Custom JavaScript', 'bandq'),
 				'id'    => 'mb_custom_js',
 				'type'  => 'textarea',
 				'std'   => false,
@@ -172,20 +172,20 @@ function wpfunc_register_meta_boxes($meta_boxes)
 
 	return $meta_boxes;
 }
-add_filter('rwmb_meta_boxes', 'wpfunc_register_meta_boxes');
+add_filter('rwmb_meta_boxes', 'bandq_register_meta_boxes');
 
 /**
  * Enqueue scripts for admin
  *
  * @since  1.0
  */
-function wpfunc_meta_boxes_scripts($hook)
+function bandq_meta_boxes_scripts($hook)
 {
 	// Detect to load un-minify scripts when WP_DEBUG is enable
 	$min = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
 
 	if (in_array($hook, array('post.php', 'post-new.php'))) {
-		wp_enqueue_script('wpf-meta-boxes', WPF_URL . "/js/admin/scripts.js", array('jquery'), WPF_VERSION, true);
+		wp_enqueue_script('wpf-meta-boxes', BANDQ_URL . "/js/admin/scripts.js", array('jquery'), BANDQ_VERSION, true);
 	}
 }
-add_action('admin_enqueue_scripts', 'wpfunc_meta_boxes_scripts');
+add_action('admin_enqueue_scripts', 'bandq_meta_boxes_scripts');

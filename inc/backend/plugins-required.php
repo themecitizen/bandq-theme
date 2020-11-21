@@ -3,16 +3,16 @@
 /**
  * Include the TGM_Plugin_Activation class.
  */
-require_once WPF_DIR . '/inc/class-tgm-plugin-activation.php';
+require_once BANDQ_PATH . '/inc/class-tgm-plugin-activation.php';
 
-add_action('tgmpa_register', 'wpfunc_register_required_plugins');
+add_action('tgmpa_register', 'bandq_register_required_plugins');
 
 /**
  * Register required plugins use in theme
  *
  * @since  1.0
  */
-function wpfunc_register_required_plugins()
+function bandq_register_required_plugins()
 {
     $plugins = array(
         array(
@@ -23,19 +23,19 @@ function wpfunc_register_required_plugins()
         array(
             'name'               => 'WPBakery Visual Composer',
             'slug'               => 'js_composer',
-            'source'             => esc_url('http://plugins.themecitizen.com/wpf_domain/js_composer.zip'),
+            'source'             => esc_url('http://plugins.themecitizen.com/bandq/js_composer.zip'),
             'required'           => true,
         ),
         array(
             'name'               => 'Revolution Slider',
             'slug'               => 'revslider',
-            'source'             => esc_url('http://plugins.themecitizen.com/wpf_domain/revslider.zip'),
+            'source'             => esc_url('http://plugins.themecitizen.com/bandq/revslider.zip'),
             'required'           => true,
         ),
     );
 
     $config = array(
-        'id'           => 'wptext',
+        'id'           => 'bandq',
         'default_path' => '',
         'menu'         => 'install-plugins',
         'has_notices'  => true,

@@ -5,8 +5,8 @@
  *
  * @return string
  */
-if (!function_exists('wpfunc_fonts_url')) {
-    function wpfunc_fonts_url()
+if (!function_exists('bandq_fonts_url')) {
+    function bandq_fonts_url()
     {
         $fonts_url = '';
 
@@ -15,20 +15,20 @@ if (!function_exists('wpfunc_fonts_url')) {
 		* into your own language.
 		*/
 
-        $poppins = _x('on', 'Poppins font: on or off', 'wpf_domain');
+        $poppins = _x('on', 'Poppins font: on or off', 'bandq');
         /* Translators: If there are characters in your language that are not
 		* supported by Montserrat, translate this to 'off'. Do not translate
 		* into your own language.
 		*/
-        $monsterat = _x('on', 'Montserrat font: on or off', 'wpf_domain');
+        $monsterat = _x('on', 'Montserrat font: on or off', 'bandq');
 
         /* Translators: If there are characters in your language that are not
 		* supported by Montserrat, translate this to 'off'. Do not translate
 		* into your own language.
 		*/
-        $playball = _x('on', 'Playball font: on or off', 'wpf_domain');
+        $playball = _x('on', 'Playball font: on or off', 'bandq');
 
-        $noto_serif = _x('on', 'Playball font: on or off', 'wpf_domain');
+        $noto_serif = _x('on', 'Playball font: on or off', 'bandq');
 
         if ('off' !== $monsterat || 'off' !== $playball || 'off' !== $playball) {
             $font_families = array();
@@ -57,7 +57,7 @@ if (!function_exists('wpfunc_fonts_url')) {
     }
 }
 
-if (!function_exists('wpfunc_comments')) {
+if (!function_exists('bandq_comments')) {
     /**
      * Function will make change HTML layout on each comment
      * @param  $comment array
@@ -66,7 +66,7 @@ if (!function_exists('wpfunc_comments')) {
      *
      * @return mixed
      */
-    function wpfunc_comments($comment, $args, $depth)
+    function bandq_comments($comment, $args, $depth)
     {
         $GLOBALS['comment'] = $comment;
         extract($args, EXTR_SKIP);
@@ -114,17 +114,17 @@ if (!function_exists('wpfunc_comments')) {
                                                 'add_below' => $add_below,
                                                 'depth' => $depth,
                                                 'max_depth' => $args['max_depth'],
-                                                'reply_text' => esc_html__('Reply', 'wpf_domain'),
+                                                'reply_text' => esc_html__('Reply', 'bandq'),
                                             )
                                         )
                                     );
 
-                                    edit_comment_link(esc_html__('Edit', 'wpf_domain'), '  ', '');
+                                    edit_comment_link(esc_html__('Edit', 'bandq'), '  ', '');
                                     ?>
                                 </div>
                             </div>
                             <?php if ($comment->comment_approved == '0') : ?>
-                                <em class="comment-awaiting-moderation"><?php esc_html_e('Your comment is awaiting moderation.', 'wpf_domain'); ?></em>
+                                <em class="comment-awaiting-moderation"><?php esc_html_e('Your comment is awaiting moderation.', 'bandq'); ?></em>
                             <?php endif; ?>
                         </div>
                         <div class="comment-content">
@@ -140,7 +140,7 @@ if (!function_exists('wpfunc_comments')) {
     }
 }
 
-if (!function_exists('wpfunc_parse_args')) :
+if (!function_exists('bandq_parse_args')) :
     /**
      * Recursive merge user defined arguments into defaults array.
      *
@@ -149,14 +149,14 @@ if (!function_exists('wpfunc_parse_args')) :
      *
      * @return array
      */
-    function wpfunc_parse_args($args, $default = array())
+    function bandq_parse_args($args, $default = array())
     {
         $args   = (array) $args;
         $result = $default;
 
         foreach ($args as $key => $value) {
             if (is_array($value) && isset($result[$key])) {
-                $result[$key] = wpfunc_parse_args($value, $result[$key]);
+                $result[$key] = bandq_parse_args($value, $result[$key]);
             } else {
                 $result[$key] = $value;
             }
@@ -167,16 +167,16 @@ if (!function_exists('wpfunc_parse_args')) :
 
 endif;
 
-if (!function_exists('wpfunc_get_mega_menu_setting_default')) :
+if (!function_exists('bandq_get_mega_menu_setting_default')) :
     /**
      * Get the default mega menu settings of a menu item
      *
      * @return array
      */
-    function wpfunc_get_mega_menu_setting_default()
+    function bandq_get_mega_menu_setting_default()
     {
         return apply_filters(
-            'wpfunc_mega_menu_setting_default',
+            'bandq_mega_menu_setting_default',
             array(
                 'mega'         => false,
                 'icon'         => '',
@@ -207,11 +207,11 @@ if (!function_exists('wpfunc_get_mega_menu_setting_default')) :
     }
 endif;
 
-if (!function_exists('wpfunc_numeric_pagination')) {
+if (!function_exists('bandq_numeric_pagination')) {
     /**
      * pagination
      */
-    function wpfunc_numeric_pagination()
+    function bandq_numeric_pagination()
     {
         global $wp_query;
 
@@ -242,11 +242,11 @@ if (!function_exists('wpfunc_numeric_pagination')) {
     }
 }
 
-if (!function_exists('wpfunc_post_thumbnail')) {
+if (!function_exists('bandq_post_thumbnail')) {
     /**
      * Display an optional post thumbnail
      */
-    function wpfunc_post_thumbnail($thumbnail_size)
+    function bandq_post_thumbnail($thumbnail_size)
     {
         $output = '';
         $post_type = get_post_format();
@@ -260,7 +260,7 @@ if (!function_exists('wpfunc_post_thumbnail')) {
         switch ($post_type) {
             case 'image':
 
-                $image = get_post_meta(get_the_ID(), 'wptext_image', true);
+                $image = get_post_meta(get_the_ID(), 'bandq_image', true);
                 if (empty($image)) {
                     if (has_post_thumbnail()) {
                         $output = get_the_post_thumbnail(get_the_ID(), $size);
@@ -350,7 +350,7 @@ if (!function_exists('wpfunc_post_thumbnail')) {
  *
  * @return mixed
  */
-function wpfunc_get_post_meta($key, $args = array(), $post_id = null)
+function bandq_get_post_meta($key, $args = array(), $post_id = null)
 {
     if (function_exists('rwmb_meta')) {
         return rwmb_meta($key, $args, $post_id);
@@ -380,7 +380,7 @@ function wpfunc_get_post_meta($key, $args = array(), $post_id = null)
             $files = array();
             foreach ($meta as $id) {
                 if (get_attached_file($id)) {
-                    $files[$id] = wpfunc_file_info($id);
+                    $files[$id] = bandq_file_info($id);
                 }
             }
             $meta = $files;
@@ -405,7 +405,7 @@ function wpfunc_get_post_meta($key, $args = array(), $post_id = null)
         if (is_array($meta) && !empty($meta)) {
             $images = array();
             foreach ($meta as $id) {
-                $images[$id] = wpfunc_file_info($id, $args);
+                $images[$id] = bandq_file_info($id, $args);
             }
             $meta = $images;
         }
@@ -441,12 +441,12 @@ function wpfunc_get_post_meta($key, $args = array(), $post_id = null)
 
 // Add new google for wpbakery visual element
 //  500 bold:500:normal - title:font-weight:font-style
-if (!function_exists('wpfunc_add_vc_google_fonts') && !has_filter('vc_google_fonts_get_fonts_filter', 'wpfunc_add_vc_google_fonts')) {
-    function wpfunc_add_vc_google_fonts($fonts)
+if (!function_exists('bandq_add_vc_google_fonts') && !has_filter('vc_google_fonts_get_fonts_filter', 'bandq_add_vc_google_fonts')) {
+    function bandq_add_vc_google_fonts($fonts)
     {
         $fonts[] = json_decode('{"font_family":"Poppins","font_styles":"regular","font_types":"400 regular:400:normal,500 bold:500:normal,600 bold regular:600:normal,700 bold regular:700:normal"}');
         $fonts[] = json_decode('{"font_family":"Heebo","font_styles":"regular","font_types":"400 regular:400:normal,500 bold:500:normal,700 bold regular:700:normal"}');
         return $fonts;
     }
-    add_filter('vc_google_fonts_get_fonts_filter', 'wpfunc_add_vc_google_fonts');
+    add_filter('vc_google_fonts_get_fonts_filter', 'bandq_add_vc_google_fonts');
 }

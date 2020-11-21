@@ -8,7 +8,7 @@
  *
  * @return array|bool False if file not found. Array of image info on success
  */
-function wpfunc_file_info($file_id, $args = array())
+function bandq_file_info($file_id, $args = array())
 {
     $args = wp_parse_args($args, array(
         'size' => 'thumbnail',

@@ -14,12 +14,12 @@
 
 </div><!-- #content -->
 <?php
-$footer_type = apply_filters('wptext_footer_type', array(
+$footer_type = apply_filters('bandq_footer_type', array(
 	'site-footer'
 ));
 ?>
 <footer id="site-footer" class="<?php echo implode(' ', $footer_type) ?>">
-	<?php do_action('wptext_footer') ?>
+	<?php do_action('bandq_footer') ?>
 </footer>
 </div><!-- #page -->
 

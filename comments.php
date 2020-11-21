@@ -26,7 +26,7 @@ if ( post_password_required() ) {
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) : ?>
 		<h3 class="comment-result">
-			<span><?php printf( '%s', number_format_i18n( get_comments_number() ) ); ?></span> <?php esc_html_e( 'Comments ', 'wpf_domain' );?>
+			<span><?php printf( '%s', number_format_i18n( get_comments_number() ) ); ?></span> <?php esc_html_e( 'Comments ', 'bandq' );?>
 		</h3>
 
 		<div class="comment-list">
@@ -35,18 +35,18 @@ if ( post_password_required() ) {
 				'style' => 'div',
 				'short_ping'  => true,
 				'avatar_size'	=> 100,
-				'callback'		=>	'wpfunc_comments',
+				'callback'		=>	'bandq_comments',
 			) );
 			?>
 		</div><!-- .comment-list -->
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
 			<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
-				<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'wpf_domain' ); ?></h2>
+				<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'bandq' ); ?></h2>
 				<div class="nav-links">
 
-					<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'wpf_domain' ) ); ?></div>
-					<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'wpf_domain' ) ); ?></div>
+					<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'bandq' ) ); ?></div>
+					<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'bandq' ) ); ?></div>
 
 				</div><!-- .nav-links -->
 			</nav><!-- #comment-nav-below -->
@@ -59,22 +59,22 @@ if ( post_password_required() ) {
 	// If comments are closed and there are comments, let's leave a little note, shall we?
 	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
 
-		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'wpf_domain' ); ?></p>
+		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'bandq' ); ?></p>
 		<?php
 	endif;
 
 	$args = array(
-		'title_reply'   => esc_html__( 'Leave A Comment', 'wpf_domain' ),
-		'label_submit'  => esc_html__( 'Send message', 'wpf_domain' ),
+		'title_reply'   => esc_html__( 'Leave A Comment', 'bandq' ),
+		'label_submit'  => esc_html__( 'Send message', 'bandq' ),
 		'comment_notes_before'	=>	'',
 		'comment_notes_after'	=>	'',
 		'class_submit'	=>	'btn-main',
 		'fields'               => array(
-			'author' => '<div class="row"><div class="form-group col-md-6">' . '<input id="author" class="form-control" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" placeholder="' . esc_attr__( 'Name', 'wpf_domain' ) . '" aria-required="true" required/></div>',
-			'email'	=>	'<div class="form-group col-md-6">' . '<input id="email" name="email" class="form-control" type="email" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" placeholder="' . esc_attr__( 'Email', 'wpf_domain' ) . '" aria-required="true" required /></div></div>',
-			'comment_field'	=>	'<div class="row"><div class="col-md-12 form-group"><textarea id="comment" rows="6" class="form-control" name="comment" placeholder="' . esc_attr__( 'Message', 'wpf_domain' ) . '" aria-required="true"></textarea></div></div>',
+			'author' => '<div class="row"><div class="form-group col-md-6">' . '<input id="author" class="form-control" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" placeholder="' . esc_attr__( 'Name', 'bandq' ) . '" aria-required="true" required/></div>',
+			'email'	=>	'<div class="form-group col-md-6">' . '<input id="email" name="email" class="form-control" type="email" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" placeholder="' . esc_attr__( 'Email', 'bandq' ) . '" aria-required="true" required /></div></div>',
+			'comment_field'	=>	'<div class="row"><div class="col-md-12 form-group"><textarea id="comment" rows="6" class="form-control" name="comment" placeholder="' . esc_attr__( 'Message', 'bandq' ) . '" aria-required="true"></textarea></div></div>',
 		),
-		'comment_field'	=>	'<div class="row"><div class="col-md-12 form-group"><textarea id="comment" rows="6" class="form-control" name="comment" placeholder="' . esc_attr__( 'Message', 'wpf_domain' ) . '" aria-required="true"></textarea></div></div>',
+		'comment_field'	=>	'<div class="row"><div class="col-md-12 form-group"><textarea id="comment" rows="6" class="form-control" name="comment" placeholder="' . esc_attr__( 'Message', 'bandq' ) . '" aria-required="true"></textarea></div></div>',
 	);
 	if ( ! is_user_logged_in() )
 	{

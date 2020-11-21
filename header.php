@@ -22,19 +22,19 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<?php do_action( 'wptext_before_header' ) ?>
+	<?php do_action( 'bandq_before_header' ) ?>
 
 	<?php
 	$header_class[] = 'site-header';
-	$header_class = apply_filters( 'wptext_header_class', $header_class );
+	$header_class = apply_filters( 'bandq_header_class', $header_class );
 	?>
 
 	<header id="masthead" class="<?php echo implode( ' ', $header_class ); ?>" role="banner">
-		<?php do_action( 'wptext_header' ); ?>
+		<?php do_action( 'bandq_header' ); ?>
 	</header><!-- #masthead -->
 
-	<?php do_action( 'wptext_after_header' ) ?>
+	<?php do_action( 'bandq_after_header' ) ?>
 
 	<div id="content" class="site-content">
 
-		<?php do_action( 'wptext_before_content' ); ?>
+		<?php do_action( 'bandq_before_content' ); ?>

@@ -5,7 +5,7 @@
  *
  * Walker class for mega menu
  */
-class WPCLASS_Mobile_Nav_Walker extends Walker_Nav_Menu
+class BANDQ_Mobile_Nav_Walker extends Walker_Nav_Menu
 {
 
 

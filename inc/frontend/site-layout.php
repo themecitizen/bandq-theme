@@ -18,7 +18,7 @@
  *
  * @return array
  */
-function wpfunc_blog_classes($classes, $class = '', $post_id = '')
+function bandq_blog_classes($classes, $class = '', $post_id = '')
 {
     if (is_home() || is_archive() || is_search()) {
         $classes[] = 'col-xs-4 blog-item';
@@ -27,11 +27,11 @@ function wpfunc_blog_classes($classes, $class = '', $post_id = '')
     return $classes;
 }
 // Add Bootstrap classes
-add_filter('post_class', 'wpfunc_blog_classes', 10, 3);
+add_filter('post_class', 'bandq_blog_classes', 10, 3);
 
-function wpfunc_custom_body_classes($classes)
+function bandq_custom_body_classes($classes)
 {
-    $classes[] = wpfunc_get_layout();
+    $classes[] = bandq_get_layout();
     return $classes;
 }
-add_filter('body_class', 'wpfunc_custom_body_classes');
+add_filter('body_class', 'bandq_custom_body_classes');

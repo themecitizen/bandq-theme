@@ -16,7 +16,7 @@
     <footer>
     <?php
     wp_link_pages( array(
-        'before' => '<div class="page-links"><label>' . esc_html__( 'Pages:', 'wpf_domain' ) . '</label>',
+        'before' => '<div class="page-links"><label>' . esc_html__( 'Pages:', 'bandq' ) . '</label>',
         'after'  => '</div>',
         'link_before' => '<span class="no">',
         'link_after'  => '</span>',

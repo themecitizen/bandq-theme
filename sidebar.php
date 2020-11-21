@@ -23,7 +23,7 @@ if ( ! is_active_sidebar( $sidebar ) )
 	return;
 }
 
-if ( 'full-content' == wpfunc_get_layout() )
+if ( 'full-content' == bandq_get_layout() )
 {
 	return;
 }

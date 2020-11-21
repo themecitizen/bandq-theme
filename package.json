@@ -1,20 +1,20 @@
 {
-  "name": "smartseo",
+  "name": "bandq",
   "version": "1.0.0",
-  "pkgname": "Smart Seo",
+  "pkgname": "BanDQ",
   "main": "Gruntfile.js",
   "prefix": {
-    "text": "smartseo",
-    "func": "wpfss_",
-    "class": "WPFSS_",
-    "widget": "SmartSeo - "
+    "text": "bandq",
+    "func": "bandq_",
+    "class": "BANDQ_",
+    "widget": "BandQ - "
   },
   "constant": {
-    "path": "WPFSS_PATH",
-    "url": "WPFSS_URL",
-    "version": "WPFSS_VERSION"
+    "path": "BANDQ_PATH",
+    "url": "BANDQ_URL",
+    "version": "BANDQ_VERSION"
   },
-  "description": "Themecitizen Theme Setup",
+  "description": "BRADDOCK + PURCELL Theme",
   "author": {
     "name": "Themecitizen",
     "website": "http://themecitizen.com",

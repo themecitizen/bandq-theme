@@ -5,13 +5,13 @@
  * @param null $layout
  * 0@return string
  */
-function wpfunc_get_layout()
+function bandq_get_layout()
 {
     $layout = '';
     if (is_page()) {
-        $layout = wpfunc_get_option('layout_page');
+        $layout = bandq_get_option('layout_page');
     } else if (is_singular('post')) {
-        $layout = wpfunc_get_option('layout_post');
+        $layout = bandq_get_option('layout_post');
     }
 
     if (!$layout || is_home() || is_front_page()) {
@@ -26,9 +26,9 @@ function wpfunc_get_layout()
  * @param null $layout
  * 0@return string
  */
-function wpfunc_get_column($layout = null)
+function bandq_get_column($layout = null)
 {
-    $layout = $layout ? $layout : wpfunc_get_layout();
+    $layout = $layout ? $layout : bandq_get_layout();
     if ('full-content' == $layout) {
         return implode(' ', array('col-xs-12'));
     }
