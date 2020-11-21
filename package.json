@@ -1,0 +1,36 @@
+{
+  "name": "smartseo",
+  "version": "1.0.0",
+  "pkgname": "Smart Seo",
+  "main": "Gruntfile.js",
+  "prefix": {
+    "text": "smartseo",
+    "func": "wpfss_",
+    "class": "WPFSS_",
+    "widget": "SmartSeo - "
+  },
+  "constant": {
+    "path": "WPFSS_PATH",
+    "url": "WPFSS_URL",
+    "version": "WPFSS_VERSION"
+  },
+  "description": "Themecitizen Theme Setup",
+  "author": {
+    "name": "Themecitizen",
+    "website": "http://themecitizen.com",
+    "demo": "http://demo.themecitizen.com"
+  },
+  "license": "GPL",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-autoprefixer": "^3.0.4",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-imagemin": "^1.0.1",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-less": "^1.4.0",
+    "grunt-contrib-uglify-es": "^3.3.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-text-replace": "^0.4.0",
+    "matchdep": "^0.3.0"
+  }
+}

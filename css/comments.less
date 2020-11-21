@@ -1,0 +1,184 @@
+.comment-list {
+  border-bottom: 1px solid @border-color;
+  padding-bottom: 50px;
+
+  .comment,
+  .pingback {
+    margin-bottom: 40px;
+
+    .media-left {
+      width: 15%;
+      margin-right: 4px;
+      min-width: 100px;
+
+      img {
+        border-radius: 100%;
+        max-width: initial;
+      }
+    }
+    .media-body {
+      width: 84%;
+      max-width: 100%;
+
+      .author-meta {
+        margin-bottom: 15px;
+        .name {
+          font-size: 17px;
+
+          .url {
+            font-size: 17px;
+            text-transform: uppercase;
+            font-weight: 500;
+          }
+
+          .text-right {
+            a {
+              font-weight: 500;
+              font-size: 15px;
+            }
+
+            .comment-edit-link,
+            .comment-reply-link {
+              color: @primary-color;
+            }
+
+            .comment-reply-link {
+              margin-left: 23px;
+            }
+            .comment-edit-link {
+              margin-left: 8px;
+            }
+          }
+        }
+      }
+
+      ul,
+      ol {
+        padding-left: 17px;
+
+        li {
+          padding: 5px 0;
+        }
+      }
+
+      ul {
+        ul {
+          li {
+            &:last-child {
+              padding-bottom: 0;
+            }
+          }
+        }
+      }
+
+      ol {
+        ol {
+          li {
+            &:last-child {
+              padding-bottom: 0;
+            }
+          }
+        }
+      }
+
+    }
+
+    .comment {
+      margin-top: 41px;
+      margin-left: 40px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .comment-respond {
+    margin-bottom: 30px;
+  }
+}
+
+.comments-area {
+  border-top: 1px solid @border-color;
+  padding-top: 44px;
+
+  .comment-result {
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 33px;
+  }
+}
+
+.comment-respond {
+  padding-top: 44px;
+
+  .comment-reply-title {
+    font-size: 25px;
+    font-weight: 600;
+
+    #cancel-comment-reply-link {
+      font-size: 15px;
+    }
+  }
+  form {
+    margin-top: 22px;
+
+    .form-group {
+      margin-bottom: 35px;
+
+      input,
+      textarea {
+        color: @text-color;
+        font-size: 13px;
+        box-shadow: none;
+        border-radius: 0;
+        border-left: none;
+        border-top: none;
+        border-right: none;
+        border-bottom: 1px solid #b5b5b5;
+        padding-left: 0;
+        padding-bottom: 9px;
+        transition: all .4s;
+
+        &:focus {
+          border-bottom-color: @primary-color;
+
+          &:-moz-placeholder {
+            color: @text-color;
+          }
+          &:-ms-input-placeholder {
+            color: @text-color;
+          }
+          &::-moz-placeholder {
+            color: @text-color;
+          }
+          &::-webkit-input-placeholder {
+            color: @text-color;
+          }
+        }
+      }
+
+      textarea {
+        padding-bottom: 17px;
+      }
+    }
+
+    .comment-form-cookies-consent {
+      label {
+        color: @text-color;
+        margin-left: 5px;
+        font-size: 13px;
+        transform: translateY(-2px);
+      }
+    }
+
+    .form-submit {
+      text-align: center;
+
+      .btn-main {
+        padding-top: 12px;
+        padding-bottom: 12px;
+      }
+    }
+  }
+}

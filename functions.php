@@ -1,0 +1,150 @@
+<?php
+
+/**
+ * functions and definitions.
+ *
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ *
+ * @package WPF Start Theme
+ */
+
+/**
+ * Set the content width based on the theme's design and stylesheet.
+ */
+if (!isset($content_width)) {
+    $content_width = 660;
+}
+/**
+ * Define theme's constants
+ */
+define('WPF_VERSION', '1.0.0');
+define('WPF_DIR', get_template_directory());
+define('WPF_URL', get_template_directory_uri());
+
+if (!function_exists('wpfunc_setup')) {
+    /**
+     * Sets up theme defaults and registers support for various WordPress features.
+     *
+     * Note that this function is hooked into the after_setup_theme hook, which
+     * runs before the init hook. The init hook is too late for some features, such
+     * as indicating support for post thumbnails.
+     */
+    function wpfunc_setup()
+    {
+        /*
+         * Make theme available for translation.
+         */
+        load_theme_textdomain('wpf_domain', get_template_directory() . '/languages');
+
+        // Add theme features
+        add_theme_support('woocommerce');
+        add_theme_support('automatic-feed-links');
+        add_theme_support('title-tag');
+        add_theme_support('post-thumbnails');
+        add_theme_support('post-formats', array('aside', 'image', 'video', 'quote', 'link'));
+        add_theme_support('html5', array(
+            'search-form',
+            'comment-form',
+            'comment-list',
+            'gallery',
+            'caption',
+        ));
+        add_editor_style();
+        /* For Gutenberg */
+        add_theme_support('wp-block-styles');
+        // Add support for full and wide align images.
+        add_theme_support('align-wide');
+        add_theme_support('align-full');
+        add_theme_support('responsive-embeds');
+        // Add support for editor styles.
+        add_theme_support('editor-styles');
+        // Enqueue editor styles.
+        if (wpfunc_fonts_url()) {
+            add_editor_style(array('css/gutenberg.css', wpfunc_fonts_url()));
+        } else {
+            add_editor_style('css/gutenberg.css');
+        }
+        // This theme uses wp_nav_menu() in one location.
+        register_nav_menus(array(
+            'primary' => esc_html__('Primary Menu', 'wpf_domain'),
+            'footer'  => __('Footer Menu', 'wpf_domain'),
+            'mobile'  => __('Mobile Menu', 'wpf_domain'),
+        ));
+
+        // Register new image sizes
+        add_image_size('wpf-custom-image-size', 570, 900, true);
+    }
+}
+add_action('after_setup_theme', 'wpfunc_setup');
+
+/**
+ * Set the content width in pixels, based on the theme's design and stylesheet.
+ *
+ * Priority 0 to make it available to lower priority callbacks.
+ *
+ * @global int $content_width
+ */
+function wpfunc_content_width()
+{
+    $GLOBALS['content_width'] = apply_filters('wptext_content_width', 640);
+}
+add_action('after_setup_theme', 'wpfunc_content_width', 0);
+
+/**
+ * Register widget area.
+ */
+function wpfunc_widgets_init()
+{
+    $sidebars = array(
+        'blog-sidebar' => __('Blog Sidebar', 'wpf_domain'),
+        'shop-sidebar' => __('Shop Sidebar', 'wpf_domain'),
+        'top-sidebar'  => __('Top Sidebar', 'wpf_domain'),
+    );
+
+    // Register sidebars
+    foreach ($sidebars as $id => $name) {
+        register_sidebar(array(
+            'name'          => $name,
+            'id'            => $id,
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h4 class="widget-title">',
+            'after_title'   => '</h4>',
+        ));
+    }
+
+    // Register footer sidebars
+    for ($i = 1; $i <= 3; $i++) {
+        register_sidebar(array(
+            'name'          => __('Footer', 'wpf_domain') . " $i",
+            'id'            => "footer-sidebar-$i",
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h4 class="widget-title">',
+            'after_title'   => '</h4>',
+        ));
+    }
+}
+add_action('widgets_init', 'wpfunc_widgets_init');
+
+require WPF_DIR . '/inc/template-tags.php';
+require WPF_DIR . '/inc/functions/theme-options.php';
+require WPF_DIR . '/inc/functions/breadcrumbs.php';
+require WPF_DIR . '/inc/backend/theme-options.php';
+require WPF_DIR . '/inc/backend/core/theme-options/framework.php';
+require WPF_DIR . '/inc/backend/sample-config.php';
+require WPF_DIR . '/inc/backend/plugins-required.php';
+require WPF_DIR . '/inc/functions/site-layout.php';
+
+if (is_admin()) {
+    require WPF_DIR . '/inc/backend/meta-boxes.php';
+} else {
+    require WPF_DIR . '/inc/frontend/media.php';
+    require WPF_DIR . '/inc/frontend/mobile-nav.php';
+    require WPF_DIR . '/inc/frontend/scripts.php';
+    require WPF_DIR . '/inc/frontend/header.php';
+    require WPF_DIR . '/inc/frontend/footer.php';
+    require WPF_DIR . '/inc/frontend/site-layout.php';
+    require WPF_DIR . '/inc/frontend/page-banner.php';
+    require WPF_DIR . '/inc/frontend/entry.php';
+}

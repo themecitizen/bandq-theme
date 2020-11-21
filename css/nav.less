@@ -1,0 +1,166 @@
+.menu-item-mega {
+    .col-1_8 {
+        width: 12.5%;
+    }
+    .col-1_4 {
+        width: 25%;
+    }
+    .col-1_3 {
+        width: 33.33%;
+    }
+    .col-3_8 {
+        width: 37.5%;
+    }
+    .col-1_2 {
+        width: 50%;
+    }
+    .col-5_8 {
+        width: 62.5%;
+    }
+    .col-2_3 {
+        width: 66.66%;
+    }
+    .col-3_4 {
+        width: 75%;
+    }
+    .col-7_8 {
+        width: 87.5%;
+    }
+    .col-1_1 {
+        width: 100%;
+    }
+}
+header {
+    .nav-menu {
+        &> li {
+            &.menu-item-has-children {
+                position: relative;
+
+                ul {
+                    background-color: @base-color;
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+                    transition: all .8s cubic-bezier(0.81, 0.79, 0.25, 1);;
+
+                    li {
+                        &.hide-link {
+                            &> a,
+                            &> span {
+                                display: none;
+                            }
+                        }
+                        &.hide-title {
+                            &> a,
+                            &> span {
+                                visibility: hidden;
+                            }
+                        }
+                        &.link-disabled {
+                            &> span {
+                                display: block;
+                                color: #fff;
+                                font-size: 13px;
+                                padding-left: 25px;
+                                padding: 13px 25px;
+                            }
+                        }
+
+                        a {
+                            display: block;
+                            color: @white;
+                            font-size: 13px;
+                            padding-left: 25px;
+                            padding: 13px 25px;
+
+                            i {
+                                color: #999;
+                                margin-right: 7px;
+                            }
+
+                            &:hover {
+                                color: @primary-color;
+                                transform: translateX(10px);
+
+                                i {
+                                    color: @primary-color;
+                                }
+                            }
+                        }
+                        &+ li {
+                            border-top: 1px solid #323232;
+                        }
+
+                    }
+                }
+            }
+            &.menu-item-mega {
+                .mega-menu {
+                    box-shadow: 0 8px 10px rgba(0, 0, 0, .2);
+                    position: absolute;
+                    top: 100%;
+                    transform: translateX(-50%);
+                    opacity: 0;
+                    visibility: hidden;
+
+                    li {
+                        a {
+                            padding-top: 11px;
+                        }
+                    }
+                }
+                .mega-menu-main {
+                    display: flex;
+                    flex-wrap: wrap;
+
+                    li {
+                        &.mega-sub-menu {
+                            border: none;
+                        }
+                    }
+                }
+
+                &:hover {
+                    .mega-menu {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+            }
+            &:not(.menu-item-mega)
+            {
+                ul {
+                    box-shadow: 0 8px 10px rgba(0, 0, 0, .2);
+                    position: absolute;
+                    top: 100%;
+                    width: 210px;
+                    max-width: 210px;
+                    opacity: 0;
+                    visibility: hidden;
+
+                    li {
+                        position: relative;
+
+                        ul {
+                            position: absolute;
+                            left: 100%;
+                            top: 0;
+                        }
+                        &:hover {
+                            &> ul {
+                                opacity: 1;
+                                visibility: visible;
+                            }
+                        }
+                    }
+                }
+                &:hover {
+                    &> ul {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+    }
+}
