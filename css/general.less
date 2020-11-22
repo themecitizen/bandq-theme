@@ -7,7 +7,7 @@
 body {
   color: @text-color;
   font-size: @font-size;
-  font-family: @font-roboto;
+  font-family: @font-barlow;
   line-height: 1.6;
   word-wrap: break-word;
   overflow-x: hidden;
@@ -25,7 +25,7 @@ h4,
 h5,
 h6 {
   font-weight: 700;
-  font-family: @font-poppins;
+  font-family: @font-barlow;
   line-height: 1.2;
   color: @text-color;
 }
@@ -202,5 +202,18 @@ textarea {
     .wrapper {
       transform: none;
     }
+  }
+}
+
+.band-container {
+  max-width: 1430px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 15px;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1230px;
   }
 }

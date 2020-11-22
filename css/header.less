@@ -1,0 +1,27 @@
+.site-header {
+    background-color: #000;
+
+    .list-socials {
+        .social + .social {
+            margin-left: 12px;
+        }
+    }
+    .navbar {
+        padding: 0;
+        margin-left: 94px;
+
+        .nav-menu {
+            li {
+                a {
+                    color: @white;
+                    font-size: 22px;
+                    text-decoration: none;
+                }
+
+                &+ li {
+                    margin-left: 45px;
+                }
+            }
+        }
+    }
+}

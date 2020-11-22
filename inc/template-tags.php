@@ -15,35 +15,14 @@ if (!function_exists('bandq_fonts_url')) {
 		* into your own language.
 		*/
 
-        $poppins = _x('on', 'Poppins font: on or off', 'bandq');
-        /* Translators: If there are characters in your language that are not
-		* supported by Montserrat, translate this to 'off'. Do not translate
-		* into your own language.
-		*/
-        $monsterat = _x('on', 'Montserrat font: on or off', 'bandq');
+        $barlow = _x('on', 'Barlow font: on or off', 'bandq');
 
-        /* Translators: If there are characters in your language that are not
-		* supported by Montserrat, translate this to 'off'. Do not translate
-		* into your own language.
-		*/
-        $playball = _x('on', 'Playball font: on or off', 'bandq');
 
-        $noto_serif = _x('on', 'Playball font: on or off', 'bandq');
-
-        if ('off' !== $monsterat || 'off' !== $playball || 'off' !== $playball) {
+        if ('off' !== $barlow) {
             $font_families = array();
 
-            if ('off' !== $poppins)
-                $font_families[] = 'Poppins:400';
-
-            if ('off' !== $monsterat)
-                $font_families[] = 'Montserrat:400,700';
-
-            if ('off' !== $playball)
-                $font_families[] = 'Playball:400';
-
-            if ('off' !== $noto_serif)
-                $font_families[] = 'Noto Serif:300,400,500,600,700';
+            if ('off' !== $barlow)
+                $font_families[] = 'Barlow:300;400;500';
 
             $query_args = array(
                 'family' => urlencode(implode('|', $font_families)),
