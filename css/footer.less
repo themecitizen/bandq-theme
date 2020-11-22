@@ -1,5 +1,40 @@
 .site-footer {
+    color: @white;
+    font-size: 20px;
+
     .footer-bottom {
         background-color: @primary-color;
+        padding: 8px 0;
+        
+        .menu {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 0 9px;
+
+            li {
+                position: relative;
+                padding-left: 10px;
+
+                a {
+                    color: #fff;
+                    text-decoration: none;
+                }
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    height: 16px;
+                    background-color: @white;
+                    width: 1px;
+                    transform: translateY(-50%);
+                }
+
+                &+ li {
+                    margin-left: 10px;
+                }
+            }
+        }
     }
 }
