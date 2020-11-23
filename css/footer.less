@@ -2,6 +2,31 @@
     color: @white;
     font-size: 20px;
 
+    .before-footer {
+        background-image: url(./img/bg-footer.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        text-align: center;
+
+        h3, h4, form {
+            color: @white;
+            font-weight: 300;
+        }
+
+        h3 {
+            font-size: 25px;
+        }
+
+        h4 {
+            font-size: 20px;
+        }
+
+        form {
+            font-size: 20px;
+        }
+    }
+
     .footer-bottom {
         background-color: @primary-color;
         padding: 8px 0;
@@ -35,6 +60,19 @@
                     margin-left: 10px;
                 }
             }
+        }
+    }
+
+    .footer-contact-form {
+        input,
+        textarea {
+            background-color: transparent;
+            border-left: none;
+            border-top: none;
+            border-right: none;
+            border-bottom: 1px solid @primary-color;
+            padding: 0;
+            color: @white;
         }
     }
 }

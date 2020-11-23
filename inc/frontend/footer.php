@@ -7,6 +7,18 @@
 /**
  * Function displays widgets registered on footer
  */
+if (!function_exists('bandq_before_footer')) {
+    function bandq_before_footer()
+    {
+        get_template_part('templates/footers/before', 'footer');
+    }
+}
+
+add_action('bandq_footer', 'bandq_before_footer', 10);
+
+/**
+ * Function displays widgets registered on footer
+ */
 if (!function_exists('bandq_footer_layout')) {
     function bandq_footer_layout()
     {

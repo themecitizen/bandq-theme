@@ -22,7 +22,7 @@ if (!function_exists('bandq_fonts_url')) {
             $font_families = array();
 
             if ('off' !== $barlow)
-                $font_families[] = 'Barlow:300;400;500';
+                $font_families[] = 'Barlow:300;500;700';
 
             $query_args = array(
                 'family' => urlencode(implode('|', $font_families)),
