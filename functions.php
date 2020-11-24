@@ -130,10 +130,6 @@ add_action('widgets_init', 'bandq_widgets_init');
 require BANDQ_PATH . '/inc/template-tags.php';
 require BANDQ_PATH . '/inc/functions/theme-options.php';
 require BANDQ_PATH . '/inc/functions/breadcrumbs.php';
-require BANDQ_PATH . '/inc/backend/theme-options.php';
-require BANDQ_PATH . '/inc/backend/core/theme-options/framework.php';
-require BANDQ_PATH . '/inc/backend/sample-config.php';
-require BANDQ_PATH . '/inc/backend/plugins-required.php';
 require BANDQ_PATH . '/inc/functions/site-layout.php';
 
 if (is_admin()) {
@@ -145,6 +141,5 @@ if (is_admin()) {
     require BANDQ_PATH . '/inc/frontend/header.php';
     require BANDQ_PATH . '/inc/frontend/footer.php';
     require BANDQ_PATH . '/inc/frontend/site-layout.php';
-    require BANDQ_PATH . '/inc/frontend/page-banner.php';
     require BANDQ_PATH . '/inc/frontend/entry.php';
 }
