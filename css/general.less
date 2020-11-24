@@ -107,6 +107,46 @@ textarea {
   }
 }
 
+.slick-dots {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+  text-align: center;
+  margin-top: 14px;
+
+  li {
+      display: inline-block;
+      
+      button {
+          font-size: 0;
+          border: none;
+          padding: 6px;
+          border-radius: 100px;
+          border: 1px solid @primary-color;
+          cursor: pointer;
+          outline: none;
+          box-shadow: none;
+          background-color: @white;
+          transition: all .3s;
+
+          &:hover {
+              background-color: @primary-color;
+          }
+      }
+
+      &+ li {
+          margin-left: 10px;
+      }
+
+      &.slick-active {
+          button {
+              background-color: @primary-color;
+          }
+      }
+  }
+}
+
 .clearfix {
   zoom: 1;
 

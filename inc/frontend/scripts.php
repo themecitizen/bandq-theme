@@ -9,9 +9,14 @@
 function bandq_enqueue_scripts()
 {
     wp_register_style('google-fonts', bandq_fonts_url());
+    wp_register_style('bandp-slick', BANDQ_URL . '/css/slick.min.css', array(), '4.0.0');
     wp_register_style('font-awesome', BANDQ_URL . '/css/font-awesome.min.css', array(), '4.6.3');
     wp_register_style('bootstrap', BANDQ_URL . '/css/bootstrap.min.css', array(), '4.0.0');
-    wp_enqueue_style('wpf-style', get_template_directory_uri() . '/style.css', array('google-fonts', 'font-awesome', 'bootstrap'), BANDQ_VERSION);
+    wp_register_style('bandp-magnific', BANDQ_URL . '/css/magnific-popup.min.css', array(), '1.1.0');
+    wp_enqueue_style('bandp-style', get_template_directory_uri() . '/style.css', array('google-fonts', 'font-awesome', 'bootstrap', 'bandp-slick', 'bandp-magnific'), BANDQ_VERSION);
+
+    wp_enqueue_script('bandp-slick-sliders', BANDQ_URL . "/js/slick.min.js", array('jquery'), '1.8.1', true);
+    wp_enqueue_script('bandp-magnific-popup', BANDQ_URL . "/js/magnific-popup.min.js", array('jquery'), '1.1.0', true);
 
     //    if ( is_home() || is_archive() )
     //    {
