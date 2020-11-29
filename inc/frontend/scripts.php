@@ -214,6 +214,6 @@ function bandq_custom_style()
 
     $custom_css .= bandq_get_post_meta('mb_custom_css');
 
-    wp_add_inline_style('wpf-style', $custom_css);
+    wp_add_inline_style('bandp-style', $custom_css);
 }
 add_action('wp_enqueue_scripts', 'bandq_custom_style', 11);
