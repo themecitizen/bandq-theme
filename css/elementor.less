@@ -156,6 +156,57 @@
             text-align: justify;
         }
     }
+
+    &.layout-2 {
+        .slick-slide {
+            margin-left:0;
+        }
+
+        /* the parent */
+        .slick-list {
+            margin-left:0;
+        }
+        .bandp-team {
+            padding-bottom: 10px;
+            padding-top: 45px;
+            border-bottom: 1px solid #93C96F;
+        }
+        .avatar {
+            max-width: 175px;
+            float: left;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            p {
+                font-size: 25px;
+                font-family: "Barlow", Sans-serif;
+                color: #081734;
+            }
+        }
+        .job-info, .content-bottom {
+            p {
+                font-size: 20px;
+                font-family: "Barlow", Sans-serif;
+                color: #081734;
+            }
+        }
+        .content-bottom {
+            clear: both;
+            max-width: 1400px;
+            text-align: justify;
+            padding-bottom: 20px;
+            p {
+                line-height: 1.2em;
+            }
+        }
+        .job-info {
+            max-width: 1220px;
+            float: left;
+            padding-left: 20px;
+            p {
+                line-height: 1.2em;
+            }
+        }
+    }
 }
 
 .band-slider {
@@ -200,6 +251,14 @@
     }
 }
 
+@media only screen and (min-width: 577px) {
+    &.layout-2 {
+        .bandp-team {
+            width: 100% !important;
+        }
+    }
+}
+
 @media only screen and (max-width: 576px) {
     .video-button-container {
         &.layout-1 {
@@ -218,6 +277,78 @@
             }
             .prev, .next {
                 bottom: -93px;
+            }
+        }
+    }
+    .bandp-team-container {
+        &.layout-2 {
+            .bandp-team {
+                border-bottom: none;
+            }
+            .inner-box {
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .job-info {
+                padding-left: 0;
+                p {
+                    font-size: 14px;
+                    text-align: center;
+                }
+            }
+            .content-bottom {
+                p {
+                    font-size: 14px;
+                    text-align: center;
+                }
+            }
+            .avatar {
+                max-width: unset;
+                float: unset;
+                .text {
+                    margin-top: 30px;
+                    span {
+                        position: relative;
+                        display: inline-block;
+                        background: #fff;
+                        padding: 0 75px;
+                        &:before {
+                            content: '';
+                            background-color: #93c96f;
+                            position: absolute;
+                            left: -60px;
+                            top: 19px;
+                            height: 1px;
+                            transform: translateY(-50%);
+                            width: 100px;
+                        }
+                        &:after {
+                            content: '';
+                            background-color: #93c96f;
+                            position: absolute;
+                            right: -60px;
+                            top: 19px;
+                            height: 1px;
+                            transform: translateY(-50%);
+                            width: 100px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 1433px) {
+    .bandp-team-container {
+        &.layout-2 {
+            .avatar {
+                width: 20%;
+            }
+            .job-info {
+                width: 80%;
             }
         }
     }
