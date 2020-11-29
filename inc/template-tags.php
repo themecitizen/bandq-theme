@@ -429,3 +429,37 @@ if (!function_exists('bandq_add_vc_google_fonts') && !has_filter('vc_google_font
     }
     add_filter('vc_google_fonts_get_fonts_filter', 'bandq_add_vc_google_fonts');
 }
+
+if (!function_exists('bandp_numeric_pagination')) {
+    /**
+     * pagination
+     */
+    function bandp_numeric_pagination($total = 0)
+    {
+        global $wp_query;
+
+        if ($wp_query->max_num_pages < 2) {
+            return;
+        } ?>
+            <nav class="navigation numeric-navigation" role="navigation">
+                <?php
+                $big = 999999999;
+        $args = array(
+                    'base'      => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+                    'mid_size'  =>  1,
+                    'end_size'  =>  0,
+                    'prev_next' => true,
+                    'prev_text' => '<',
+                    'next_text' => '>',
+                    'current'   => max(1, get_query_var('paged')),
+                    'type'      => 'list',
+                    'total'     => $total > 0 ? $total : $wp_query->max_num_pages,
+                    'before_page_number' => '<span class="number">',
+                    'after_page_number' => '</span>',
+                );
+
+        echo paginate_links($args); ?>
+            </nav>
+    <?php
+    }
+}

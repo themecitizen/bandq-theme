@@ -38,3 +38,12 @@
 	<div id="content" class="site-content">
 
 		<?php do_action( 'bandq_before_content' ); ?>
+		<?php
+		if(is_home() || is_singular('post')) {
+			$container_class = 'container';
+			?>
+				<div class="<?php echo esc_attr( $container_class ); ?>">
+					<div class="row">
+			<?php
+		}
+		?>

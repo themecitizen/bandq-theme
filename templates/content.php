@@ -1,47 +1,39 @@
 <?php
 /**
  * Template part for displaying posts.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package WPF Start Theme
  */
 
+$has_thumbnail = '';
 ?>
-
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class($has_thumbnail); ?>>
 	<header class="entry-header">
-		<?php
-			if ( is_single() ) {
-				the_title( '<h1 class="entry-title">', '</h1>' );
-			} else {
-				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-			}
-
-		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php //mytheme_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php
-		endif; ?>
-	</header><!-- .entry-header -->
+			<?php
+            if (has_post_thumbnail()) {
+				echo get_the_post_thumbnail(get_the_ID(), 'bandp-custom-blog-list-thumbnail');
+            }
+            ?>
+		</header><!-- .entry-header -->
 
 	<div class="entry-content">
-		<?php
-			the_content( sprintf(
-				/* translators: %s: Name of current post. */
-				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'bandq' ), array( 'span' => array( 'class' => array() ) ) ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );
+		<h2 class="entry-title">
+			<?php
+			$post_url = get_the_permalink();
+            ?>
+			<a href="<?php echo esc_url($post_url); ?>"><?php the_title(); ?></a>
+		</h2>
 
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'bandq' ),
-				'after'  => '</div>',
-			) );
-		?>
+		<?php get_template_part('templates/post', 'meta'); ?>
+		<div class="post-excerpt">
+			<?php
+			the_excerpt();
+			?>
+		</div>
+		
+		<div class="post-info">
+			<div class="d-flex justify-content-between align-items-center">
+				<a class="post-detail" href="<?php the_permalink(); ?>"><?php esc_html_e('Read More', 'osaas'); ?></a>
+			</div>
+		</div>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php //mytheme_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

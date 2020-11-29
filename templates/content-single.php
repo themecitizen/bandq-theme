@@ -3,25 +3,24 @@
  * Output single post content
  */
 ?>
-<article id="post-<?php get_the_ID(); ?>" <?php post_class(); ?>>
-    <header class="entry-header clearfix">
 
-    </header>
-    <div class="entry-content">
-        <?php
-        the_content();
-        ?>
-        <div class="clearfix"></div>
-    </div><!-- .entry-content -->
-    <footer>
+<article id="post-<?php get_the_ID(); ?>">
+    <header class="entry-header">
     <?php
-    wp_link_pages( array(
-        'before' => '<div class="page-links"><label>' . esc_html__( 'Pages:', 'bandq' ) . '</label>',
-        'after'  => '</div>',
-        'link_before' => '<span class="no">',
-        'link_after'  => '</span>',
-    ) );
+    if (has_post_thumbnail()) {
+        echo get_the_post_thumbnail(get_the_ID(), 'bandp-custom-blog-list-thumbnail');
+    }
     ?>
-    </footer>
+    </header>
+	<div class="entry-content">
+		<h2 class="entry-title"><?php the_title(); ?></h2>
+
+		<?php get_template_part('templates/post', 'meta'); ?>
+		<div class="post-excerpt">
+			<?php
+			the_content();
+			?>
+		</div>
+	</div><!-- .entry-content -->
 </article>
 

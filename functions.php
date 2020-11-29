@@ -72,7 +72,7 @@ if (!function_exists('bandq_setup')) {
         ));
 
         // Register new image sizes
-        add_image_size('wpf-custom-image-size', 570, 900, true);
+        add_image_size('bandp-custom-blog-list-thumbnail', 770, 460, true);
     }
 }
 add_action('after_setup_theme', 'bandq_setup');

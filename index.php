@@ -14,7 +14,7 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area col">
 		<main id="main" class="site-main" role="main">
 
 		<?php
@@ -40,7 +40,12 @@ get_header(); ?>
 
 			endwhile;
 
-			the_posts_navigation();
+			?>
+			<div class="bottom-toolbar d-flex justify-content-center">
+				<?php bandp_numeric_pagination(); ?>
+			</div>
+		<?php
+			wp_reset_postdata();
 
 		else :
 
