@@ -1,3 +1,44 @@
+.band-blog-list {
+    .list-posts {
+        .post-info {
+            font-size: 18px;
+            line-height: 22px;
+
+            .image {
+                border-bottom: 1px solid @primary-color;
+                padding-bottom: 22px;
+                margin-bottom: 21px;
+            }
+
+            h2 {
+                font-size: 20px;
+                font-weight: 600;
+                margin-bottom: 21px;
+
+                a {
+                    color: @text-color;
+                }
+            }
+        }
+
+        .left-side {
+            .post-info {
+                padding-right: 118px;
+            }
+        }
+
+        .right-side { 
+            .post-info {
+                text-align: center;
+
+                &+ .post-info {
+                    margin-top: 59px;
+                }
+            }
+        }
+    }
+}
+
 .bandp-testimonial-container {
     .bandp-testimonial {
         padding: 30px;
