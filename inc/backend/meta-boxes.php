@@ -91,82 +91,11 @@ function bandq_register_meta_boxes($meta_boxes)
 		'priority' => 'high',
 		'fields'   => array(
 			array(
-				'name' => __('Title', 'bandq'),
-				'id'   => 'mb_heading_title',
-				'type' => 'heading',
-			),
-			array(
-				'name'  => __('Hide The Title', 'bandq'),
-				'id'    => 'mb_hide_title',
-				'type'  => 'checkbox',
-				'std'   => false,
-			),
-			array(
-				'name' => __('Breadcrumb', 'bandq'),
-				'id'   => 'mb_heading_breadcrumb',
-				'type' => 'heading',
-			),
-			array(
-				'name'  => __('Hide Breadcrumb', 'bandq'),
-				'id'    => 'mb_hide_breadcrumb',
-				'type'  => 'checkbox',
-				'std'   => false,
-			),
-			array(
-				'name' => __('Layout & Styles', 'bandq'),
-				'id'   => 'mb_heading_layout',
-				'type' => 'heading',
-			),
-			array(
-				'name'  => __('Custom Layout', 'bandq'),
-				'id'    => 'mb_custom_layout',
-				'type'  => 'checkbox',
-				'std'   => false,
-			),
-			array(
-				'name'            => __('Layout', 'bandq'),
-				'id'              => 'mb_layout',
-				'type'            => 'image_select',
-				'class'           => 'custom-layout',
-				'options'         => array(
-					'full-content'    => BANDQ_URL . '/inc/libs/theme-options/img/sidebars/empty.png',
-					'sidebar-content' => BANDQ_URL . '/inc/libs/theme-options/img/sidebars/single-left.png',
-					'content-sidebar' => BANDQ_URL . '/inc/libs/theme-options/img/sidebars/single-right.png',
-				),
-			),
-			array(
-				'name'  => esc_html__('Custom Header Layout', 'consux'),
-				'id'    => 'mb_custom_header',
-				'type'  => 'checkbox',
-				'std'   => false,
-			),
-			array(
-				'id' => 'mb_header_layout',
-				'name' => esc_html__('Header Layout', 'consux'),
-				'type' => 'select',
-				'placeholder' => esc_html__('Select an Item', 'consux'),
-				'options' => array(
-					'1' => esc_html__('Header 1', 'consux'),
-					'2' => esc_html__('Header 2', 'consux'),
-					'3' => esc_html__('Header 3', 'consux'),
-					'4' => esc_html__('Header 4', 'consux'),
-					'5' => esc_html__('Header 5', 'consux'),
-					'6' => esc_html__('Header 6', 'consux'),
-				),
-				'std' => '1',
-			),
-			array(
 				'name'  => __('Custom CSS', 'bandq'),
 				'id'    => 'mb_custom_css',
 				'type'  => 'textarea',
 				'std'   => false,
-			),
-			array(
-				'name'  => __('Custom JavaScript', 'bandq'),
-				'id'    => 'mb_custom_js',
-				'type'  => 'textarea',
-				'std'   => false,
-			),
+			)
 		),
 	);
 
