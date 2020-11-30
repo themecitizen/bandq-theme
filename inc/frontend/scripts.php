@@ -17,6 +17,7 @@ function bandq_enqueue_scripts()
 
     wp_enqueue_script('bandp-slick-sliders', BANDQ_URL . "/js/slick.min.js", array('jquery'), '1.8.1', true);
     wp_enqueue_script('bandp-magnific-popup', BANDQ_URL . "/js/magnific-popup.min.js", array('jquery'), '1.1.0', true);
+    wp_enqueue_script('bandp-scripts', BANDQ_URL . "/js/scripts" . $min . ".js", array('jquery'), '1.0.0', true);
 
     //    if ( is_home() || is_archive() )
     //    {

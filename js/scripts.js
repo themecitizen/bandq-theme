@@ -5,8 +5,59 @@
         this.$window = $(window);
         this.$body = $(document.body);
 
-        this.toggleMobileNav();
+        this.socialsInfoCarousel();
     };
+
+    tzTheme.socialsInfoCarousel = function () {
+        var $container = tzTheme.$body.find('#site-footer .social-section');
+
+        var $slide = $container.find('.socials-info');
+
+        $slide.not('.slick-initialized').slick({
+            arrows: false,
+            dots: false,
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            infinite: true,
+            swipeToSlide: true,
+            autoplay: true,
+            responsive: [
+                {
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 4,
+                        autoplay: false,
+                        centerMode: false
+                    }
+                },
+                {
+                    breakpoint: 991,
+                    settings: {
+                        slidesToShow: 3,
+                        autoplay: false,
+                        centerMode: false
+                    }
+                },
+                {
+                    breakpoint: 767,
+                    settings: {
+                        slidesToShow: 2,
+                        autoplay: false,
+                        centerMode: false
+                    }
+                },
+                {
+                    breakpoint: 390,
+                    settings: {
+                        slidesToShow: 1,
+                        autoplay: false,
+                        centerMode: false
+                    }
+                }
+            ]
+            
+        });
+    },
 
     tzTheme.toggleMobileNav = function () {
         var $navMobile = tzTheme.$body.find('#mobile-menu-nav'),

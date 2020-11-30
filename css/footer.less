@@ -132,12 +132,11 @@
             padding: 0;
             margin: 0;
             text-align: left;
-            display: flex;
-            justify-content: space-between;
 
             li {
 
                 img {
+                    display: inline-block;
                     margin-right: 8px;
                 }
 
@@ -193,6 +192,15 @@
                 display: none !important;
             }
         }
+
+        .social-section {
+            ul {
+                li {
+                    text-align: center;
+                }
+            }
+        }
+
     }
 }
 
@@ -224,6 +232,10 @@
         }
         .social-section {
             margin-top: 113px;
+
+            ul {
+                font-size: 14px;
+            }
         }
         .footer-bottom {
             font-size: 14px;
