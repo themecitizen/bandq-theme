@@ -170,6 +170,29 @@
             }
             
         }
+
+        .footer-bottom {
+            .menu {
+                li {
+                    &:first-child {
+                        &::before {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media(max-width: 767px) {
+    .site-footer {
+        .footer-bottom {
+            .menu {
+                display: none !important;
+            }
+        }
     }
 }
 
@@ -201,6 +224,9 @@
         }
         .social-section {
             margin-top: 113px;
+        }
+        .footer-bottom {
+            font-size: 14px;
         }
     }
 }
