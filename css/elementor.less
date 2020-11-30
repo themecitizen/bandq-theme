@@ -97,6 +97,10 @@
         font-weight: 500;
         line-height: 21px;
 
+        .icon-mobile {
+            display: none;
+        }
+
         .image {
             margin-bottom: 20px;
         }
@@ -296,10 +300,86 @@
     }
 }
 
-@media only screen and (min-width: 577px) {
-    &.layout-2 {
-        .bandp-team {
-            width: 100% !important;
+@media only screen and (max-width: 1199px) {
+    .bandp-step-container {
+        &.layout-1 {
+            .box {
+                .icon {
+                    display: none;
+                }
+            }
+           .top-row {
+               display: block !important;
+               margin-bottom: 0;
+
+               .box {
+                   &.box-1 {
+                    left: -150px;
+                   }
+                   &.box-2 {
+                    left: 115px;
+                    top: -45px;
+                   }
+                   &.box-3 {
+                    left: 10px;
+                    top: -22px;
+                   }
+               }
+           }
+           .bottom-row {
+            
+                .box {
+                    margin: auto;
+
+                    &.box-4 {
+                        // left: -100px;
+                        order: 1;
+                    }
+                    &.box-5 {
+                        // left: 80px;
+                        order: 0;
+                    }
+                }
+           }
+        }
+    }
+    
+    .bandp-step-container {
+        .box {   
+            .icon-mobile {
+                display: block;
+                position: absolute;
+            }
+
+            &.box-1 {
+                .icon-mobile {
+                    right: 0;
+                    left: 160px;
+                    top: 108%;
+                }
+            }
+            &.box-2 {
+                .icon-mobile {
+                    left: 0px;
+                    right: -160px;
+                    top: 111%;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .bandp-team-container {
+        &.layout-1 {
+            .slick-list {
+                margin-left: 0px;
+            }
+
+            .slick-slide {
+                margin-left: 0;
+                padding: 0 15px;
+            }
         }
     }
 }
@@ -382,6 +462,27 @@
                     }
                 }
             }
+        }
+    }
+}
+
+@media only screen and (max-width: 479px) {
+    .bandp-team-container {
+        &.layout-1 {
+            .bandp-team {
+                .job-info {
+                    font-size: 14px;
+                    line-height: 17px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 577px) {
+    &.layout-2 {
+        .bandp-team {
+            width: 100% !important;
         }
     }
 }
