@@ -2,10 +2,11 @@
     <div class="band-container">
         <div class="row align-items-center">
             <div class="left-content d-flex align-items-center col-10">
+                <a class="toggle-menu"><img src="<?php echo BANDQ_URL . '/img/toggle-icon.png'; ?>" alt="toggle-mobile-icon"/></a>
                 <?php
                 get_template_part('templates/logo');
                 ?>
-                <div class="nav-container navbar navbar-expand-lg align-items-center d-none d-lg-block">
+                <div class="nav-container navbar navbar-expand-lg align-items-center d-lg-block">
                 <?php
                 if (has_nav_menu('primary')) {
                     wp_nav_menu(array(

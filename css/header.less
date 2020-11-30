@@ -8,6 +8,7 @@
             margin-left: 12px;
         }
     }
+
     .navbar {
         padding: 0;
         margin-left: 94px;
@@ -26,6 +27,130 @@
 
                 &+ li {
                     margin-left: 45px;
+                }
+            }
+        }
+    }
+
+    .toggle-menu {
+        display: none;
+    }
+}
+
+@media(max-width: 1250px) {
+    .site-header {
+        .left-content {
+            flex-basis: 100%;
+            max-width: 100%;
+            justify-content: space-between;
+        }
+    
+        .right-content {
+            display: none !important;
+        }
+
+        .navbar {
+            margin-left: 30px;
+        }
+    }
+}
+
+@media(max-width: 1100px) {
+    .site-header {
+        .navbar {
+            .nav-menu {
+                li {
+                    a {
+                        font-size: 18px;
+                    }
+                    &+ li {
+                        margin-left: 30px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 991px) {
+    .site-header {
+        position: relative;
+
+        .left-content {
+            position: static !important;
+            display: block !important;
+            text-align: center;
+
+            .toggle-menu {
+                position: absolute;
+                left: 40px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+
+        .navbar {
+            background-color: @primary-color;
+            z-index: 9999;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            margin-left: 0;
+            text-align: left;
+            display: none;
+
+            .nav-menu {
+                display: block !important;
+                padding-top: 4px;
+                padding-bottom: 4px;
+                width: 100%;
+
+                li {
+                    padding: 5px 15px;
+                    display: block;
+
+                    a {
+                        color: @text-color;
+                    }
+
+                    &+ li {
+                        border-top: 1px solid @text-color;
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+
+        .toggle-menu {
+            display: inline-block;
+        }
+    }
+}
+
+@media(max-width: 400px) {
+    .site-header {
+        .left-content {
+            .toggle-menu {
+                left: 15px;
+            }
+        }
+    }
+}
+
+@media(min-width: 1250px) and (max-width: 1400px) {
+    .site-header {
+        .left-content {
+            justify-content: space-between;
+        }
+        .navbar {
+            margin-left: 41px;
+
+            .nav-menu {
+                li {
+                    &+ li {
+                        margin-left: 31px;
+                    }
                 }
             }
         }

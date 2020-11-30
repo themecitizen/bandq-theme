@@ -6,6 +6,7 @@
         this.$body = $(document.body);
 
         this.socialsInfoCarousel();
+        this.toggleMobileNav();
     };
 
     tzTheme.socialsInfoCarousel = function () {
@@ -60,33 +61,32 @@
     },
 
     tzTheme.toggleMobileNav = function () {
-        var $navMobile = tzTheme.$body.find('#mobile-menu-nav'),
-            $toogleButton = tzTheme.$body.find('.navbar-toggler'),
-            $nav = tzTheme.$body.find('.mobile-nav-container');
-        $navMobile.find('.toggle-submenu').on('click', function (e) {
+        // var $navMobile = tzTheme.$body.find('#mobile-menu-nav'),
+        //     $toogleButton = tzTheme.$body.find('.navbar-toggler'),
+        //     $nav = tzTheme.$body.find('.mobile-nav-container');
+            tzTheme.$body.find('.toggle-menu').on('click', function (e) {
             e.stopPropagation();
             e.preventDefault();
             var $current = $(this),
-                $parent = $current.closest('.menu-item');
-            $parent.toggleClass('expanded');
-            $parent.children('.sub-menu').stop(true, true).slideToggle();
+                $parent = $current.parents('.left-content');
+            $parent.find('.navbar').stop(true, true).slideToggle();
         });
-        $toogleButton.on('click', function (e) {
-            e.preventDefault();
-            var $current = $(this);
-            $current.toggleClass('collapsed');
-            $nav.toggleClass('showed');
-        });
-        $nav.find('#close-mobile-nav').on('click', function (e) {
-            e.stopPropagation();
-            e.preventDefault();
-            $nav.removeClass('showed');
-            $toogleButton.addClass('collapsed');
-        });
-        $nav.on('click', function (e) {
-            e.preventDefault();
-            $nav.find('#close-mobile-nav').trigger('click');
-        });
+        // $toogleButton.on('click', function (e) {
+        //     e.preventDefault();
+        //     var $current = $(this);
+        //     $current.toggleClass('collapsed');
+        //     $nav.toggleClass('showed');
+        // });
+        // $nav.find('#close-mobile-nav').on('click', function (e) {
+        //     e.stopPropagation();
+        //     e.preventDefault();
+        //     $nav.removeClass('showed');
+        //     $toogleButton.addClass('collapsed');
+        // });
+        // $nav.on('click', function (e) {
+        //     e.preventDefault();
+        //     $nav.find('#close-mobile-nav').trigger('click');
+        // });
     };
 
     /**
