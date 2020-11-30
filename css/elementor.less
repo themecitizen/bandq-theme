@@ -327,16 +327,19 @@
                }
            }
            .bottom-row {
-            
+                flex-direction: column;
+
                 .box {
                     margin: auto;
 
                     &.box-4 {
-                        // left: -100px;
                         order: 1;
+                        top: 15px;
+                        right: -69px;
                     }
                     &.box-5 {
-                        // left: 80px;
+                        top: -10px;
+                        left: -50px;
                         order: 0;
                     }
                 }
@@ -365,6 +368,24 @@
                     top: 111%;
                 }
             }
+            &.box-3 {
+                .icon-mobile {
+                    left: -410px;
+                    right: 0;
+                    bottom: -93px;
+                }
+            }
+            &.box-4 {
+                .icon-mobile {
+                    display: none;
+                }
+            }
+            &.box-5 {
+                .icon-mobile {
+                    top: 66%;
+                    right: -90px;
+                }
+            }
         }
     }
 }
@@ -384,7 +405,17 @@
     }
 }
 
+@media only screen and (max-width: 767px) {
+    .bandp-step-container {
+        .box {
+            font-size: 13px;
+            line-height: 16px;
+        }
+    }
+}
+
 @media only screen and (max-width: 576px) {
+
     .video-button-container {
         &.layout-1 {
             img {
@@ -467,6 +498,28 @@
 }
 
 @media only screen and (max-width: 479px) {
+    .bandp-step-container {
+        .box {
+            left: 0 !important;
+            right: 0 !important;
+            top: 0 !important;
+            bottom: 0 !important;
+
+            .icon-mobile {
+                display: none;
+            }
+
+            & + .box {
+                margin-top: 50px;
+            }
+
+            &.box-4,
+            &.box-5 {
+                margin-top: 50px !important;
+            }
+        }
+    }
+
     .bandp-team-container {
         &.layout-1 {
             .bandp-team {
