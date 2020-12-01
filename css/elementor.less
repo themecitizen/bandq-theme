@@ -1,5 +1,6 @@
 .band-blog-list {
-    .list-posts {
+    .list-posts,
+    .list-posts-carousel {
         .post-info {
             font-size: 18px;
             line-height: 22px;
@@ -40,6 +41,15 @@
                 }
             }
         }
+    }
+
+    .list-posts-carousel {
+        display: none;
+
+        .slick-dots {
+            margin-top: 31px;
+        }
+
     }
 }
 
@@ -391,6 +401,20 @@
 }
 
 @media only screen and (max-width: 991px) {
+    .band-blog-list {
+        .list-posts {
+            .left-side {
+                flex-basis: 65%;
+
+                .post-info {
+                    padding-right: 30px;
+                }
+            }
+            .right-side {
+                flex-basis: 35%;
+            }
+        }
+    }
     .bandp-team-container {
         &.layout-1 {
             .slick-list {
@@ -412,6 +436,10 @@
             line-height: 16px;
         }
     }
+}
+
+@media only screen and (max-width: 767px) {
+    
 }
 
 @media only screen and (max-width: 579px) {
