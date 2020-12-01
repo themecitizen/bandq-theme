@@ -364,10 +364,8 @@
             }
             &.box-2 {
                 .icon-mobile {
-                    left: 0;
-                    right: 0;
                     top: 111%;
-                    transform: translateX(205px);
+                    left: 66%;
                 }
             }
             &.box-3 {
@@ -416,7 +414,7 @@
     }
 }
 
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 579px) {
 
     .video-button-container {
         &.layout-1 {
@@ -497,9 +495,40 @@
             }
         }
     }
+
+    .bandp-step-container {
+        &.layout-1 {
+            .bottom-row {
+                .box.box-4 {
+                    right: -35px;
+                }
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 479px) {
+    .bandp-testimonial-container {
+        .bandp-testimonial {
+            .inner-box {
+                padding: 130px 32px 58px 32px;
+
+                h3 {
+                    font-size: 18px;
+                }
+
+                .job-info {
+                    font-size: 14px;
+                    line-height: 17px;
+                    margin-bottom: 69px;
+                }
+            }
+        }
+
+        .slick-dots {
+            margin-top: 10px;
+        }
+    }
     .bandp-step-container {
         .box {
             left: 0 !important;
@@ -518,6 +547,18 @@
             &.box-4,
             &.box-5 {
                 margin-top: 50px !important;
+            }
+
+            &.box-2 {
+                padding-left: 0 !important;
+            }
+
+            .information {
+                text-align: center !important;
+
+                br {
+                    display: none;
+                }
             }
         }
     }
