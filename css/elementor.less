@@ -405,7 +405,6 @@
         .list-posts {
             .left-side {
                 flex-basis: 65%;
-
                 .post-info {
                     padding-right: 30px;
                 }
@@ -430,6 +429,21 @@
 }
 
 @media only screen and (max-width: 767px) {
+    .band-blog-list {
+        .list-posts {
+            display: none !important;
+        }
+        .list-posts-carousel {
+            display: block;
+
+            .slick-slide {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
     .bandp-step-container {
         .box {
             font-size: 13px;
@@ -438,11 +452,25 @@
     }
 }
 
-@media only screen and (max-width: 767px) {
-    
-}
-
 @media only screen and (max-width: 579px) {
+
+    .band-blog-list {
+        .list-posts-carousel {
+            .post-info {
+                .image {
+                    margin-bottom: 14px;
+                }
+                h2 {
+                    font-size: 16px;
+                    margin-bottom: 18px;
+                }
+                .excerpt {
+                    font-size: 14px;
+                    line-height: 16px;
+                }
+            }
+        }
+    }
 
     .video-button-container {
         &.layout-1 {
