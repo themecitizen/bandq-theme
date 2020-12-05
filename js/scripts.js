@@ -61,32 +61,24 @@
     },
 
     tzTheme.toggleMobileNav = function () {
-        // var $navMobile = tzTheme.$body.find('#mobile-menu-nav'),
-        //     $toogleButton = tzTheme.$body.find('.navbar-toggler'),
-        //     $nav = tzTheme.$body.find('.mobile-nav-container');
+
             tzTheme.$body.find('.toggle-menu').on('click', function (e) {
-            e.stopPropagation();
-            e.preventDefault();
-            var $current = $(this),
-                $parent = $current.parents('.left-content');
-            $parent.find('.navbar').stop(true, true).slideToggle();
-        });
-        // $toogleButton.on('click', function (e) {
-        //     e.preventDefault();
-        //     var $current = $(this);
-        //     $current.toggleClass('collapsed');
-        //     $nav.toggleClass('showed');
-        // });
-        // $nav.find('#close-mobile-nav').on('click', function (e) {
-        //     e.stopPropagation();
-        //     e.preventDefault();
-        //     $nav.removeClass('showed');
-        //     $toogleButton.addClass('collapsed');
-        // });
-        // $nav.on('click', function (e) {
-        //     e.preventDefault();
-        //     $nav.find('#close-mobile-nav').trigger('click');
-        // });
+                e.stopPropagation();
+                e.preventDefault();
+                var $current = $(this),
+                    $parent = $current.parents('.left-content');
+                $parent.addClass('show-nav');
+                $parent.find('.navbar').stop(true, true).slideDown();
+            });
+
+            tzTheme.$body.find('.close-nav').on('click', function (e) {
+                e.stopPropagation();
+                e.preventDefault();
+                var $current = $(this),
+                    $parent = $current.parents('.left-content');
+                $parent.removeClass('show-nav');
+                $parent.find('.navbar').stop(true, true).slideUp();
+            });
     };
 
     /**

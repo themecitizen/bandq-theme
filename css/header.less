@@ -7,6 +7,23 @@
         .social + .social {
             margin-left: 12px;
         }
+
+        &.list-socials-mobile {
+            background-color: @primary-color;
+            border-top: 1px solid #d1d2d2;
+
+            .social + .social {
+                margin-left: 0;
+                border-left: 1px solid #d1d2d2;
+            }
+
+            .social {
+                flex-basis: 33.3333%;
+                max-width: 33.333333%;
+                text-align: center;
+                padding: 10px 0;
+            }
+        }
     }
 
     .navbar {
@@ -35,6 +52,14 @@
     .toggle-menu {
         cursor: pointer;
         display: none;
+    }
+
+    .left-content {
+        &.show-nav {
+            .toggle-menu {
+                visibility: hidden;
+            }
+        }
     }
 }
 
@@ -91,36 +116,44 @@
         }
 
         .navbar {
-            background-color: @primary-color;
+            background-color: rgba(8, 23, 52, .8);
             z-index: 9999;
             position: absolute;
-            top: 100%;
+            top: 0;
             left: 0;
             width: 100%;
             margin-left: 0;
             text-align: left;
             display: none;
 
+            .close-nav {
+                position: absolute;
+                top: 30px;
+                left: 40px;
+            }
+
             .nav-menu {
                 display: block !important;
-                padding-top: 4px;
-                padding-bottom: 4px;
+                padding-top: 54px;
+                padding-bottom: 68px;
+                text-align: center;
                 width: 100%;
 
                 li {
-                    padding: 5px 15px;
+                    padding: 13px 15px;
                     display: block;
-
+                    font-size: 25px;
+                    
                     a {
-                        color: @text-color;
+                        color: @white;
+                        font-size: 25px;
 
                         &:hover {
-                            color: @text-color;
+                            color: @white;
                         }
                     }
 
                     &+ li {
-                        border-top: 1px solid @text-color;
                         margin-left: 0;
                     }
                 }
@@ -137,6 +170,12 @@
     .site-header {
         .left-content {
             .toggle-menu {
+                left: 15px;
+            }
+        }
+        .navbar {
+            .close-nav {
+                top: 30px;
                 left: 15px;
             }
         }
