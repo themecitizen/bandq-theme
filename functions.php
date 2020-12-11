@@ -127,6 +127,113 @@ function bandq_widgets_init()
 }
 add_action('widgets_init', 'bandq_widgets_init');
 
+// Add settings customizer
+
+add_action('customize_register','bandq_customizer_options');
+/*
+ * Add in our custom Accent Color setting and control to be used in the Customizer in the Colors section
+ *
+ */
+function bandq_customizer_options( $wp_customize ) {
+
+    $wp_customize->add_section( 'bandq_site_settings' , array(
+        'title'      => __( 'Site Settings', 'bandq' ),
+        'priority'   => 30,
+    ) );
+
+    $wp_customize->add_setting(
+        'bandq_phone_number', //give it an ID
+        array(
+            'default' => '212-715-0899', // Give it a default
+        )
+    );
+
+    $wp_customize->add_control( 'bandq_phone_number', array(
+        'type' => 'text',
+        'section' => 'bandq_site_settings', // Add a default or your own section
+        'label' => __( 'Phone Number', 'bandq' ),
+    ) );
+
+    $wp_customize->add_setting(
+        'bandq_facebook_acc', //give it an ID
+        array(
+            'default' => 'braddockandpurcel', // Give it a default
+        )
+    );
+
+    $wp_customize->add_control( 'bandq_facebook_acc', array(
+        'type' => 'text',
+        'section' => 'bandq_site_settings', // Add a default or your own section
+        'label' => __( 'Facebook Acc', 'bandq' ),
+    ) );
+
+    $wp_customize->add_setting(
+        'bandq_facebook_url', //give it an ID
+        array(
+            'default' => '#', // Give it a default
+        )
+    );
+
+    $wp_customize->add_control( 'bandq_facebook_url', array(
+        'type' => 'text',
+        'section' => 'bandq_site_settings', // Add a default or your own section
+        'label' => __( 'Facebook Url', 'bandq' ),
+    ) );
+
+    $wp_customize->add_setting(
+        'bandq_instagram_acc', //give it an ID
+        array(
+            'default' => 'braddock_and_purcel', // Give it a default
+        )
+    );
+
+    $wp_customize->add_control( 'bandq_instagram_acc', array(
+        'type' => 'text',
+        'section' => 'bandq_site_settings', // Add a default or your own section
+        'label' => __( 'Instagram Acc', 'bandq' ),
+    ) );
+
+    $wp_customize->add_setting(
+        'bandq_instagram_url', //give it an ID
+        array(
+            'default' => '#', // Give it a default
+        )
+    );
+
+    $wp_customize->add_control( 'bandq_instagram_url', array(
+        'type' => 'text',
+        'section' => 'bandq_site_settings', // Add a default or your own section
+        'label' => __( 'Instagram', 'bandq' ),
+    ) );
+
+    $wp_customize->add_setting(
+        'bandq_email_1', //give it an ID
+        array(
+            'default' => 'kathy@bandp.com', // Give it a default
+        )
+    );
+
+    $wp_customize->add_control( 'bandq_email_1', array(
+        'type' => 'text',
+        'section' => 'bandq_site_settings', // Add a default or your own section
+        'label' => __( 'Email 1', 'bandq' ),
+    ) );
+
+    $wp_customize->add_setting(
+        'bandq_email_2', //give it an ID
+        array(
+            'default' => 'paul@bandp.com', // Give it a default
+        )
+    );
+
+    $wp_customize->add_control( 'bandq_email_2', array(
+        'type' => 'text',
+        'section' => 'bandq_site_settings', // Add a default or your own section
+        'label' => __( 'Email 2', 'bandq' ),
+    ) );
+
+}
+
 require BANDQ_PATH . '/inc/template-tags.php';
 require BANDQ_PATH . '/inc/functions/theme-options.php';
 require BANDQ_PATH . '/inc/functions/breadcrumbs.php';

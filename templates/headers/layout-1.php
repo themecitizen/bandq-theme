@@ -32,15 +32,20 @@
                     </div>
 				</div>
             </div>
+            <?php
+                $phone =  get_theme_mod( 'bandq_phone_number') != "" ? get_theme_mod( 'bandq_phone_number') : '#';
+                $instagram =  get_theme_mod( 'bandq_instagram_url') != "" ? get_theme_mod( 'bandq_instagram_url') : '#';
+                $facebook =  get_theme_mod( 'bandq_facebook_url') != "" ? get_theme_mod( 'bandq_facebook_url') : '#';
+            ?>
             <div class="right-content col-lg-2 d-none d-lg-block text-right">
                 <div class="list-socials">
-                    <a href="#" class="social">
+                    <a href="tel:<?php echo $phone;?>" class="social">
                         <img title="phone" src="<?php echo BANDQ_URL . '/img/phone.png'; ?>" alt="<?php echo esc_attr__( 'phone', 'bandq' ); ?>">
                     </a>
-                    <a href="#" class="social">
+                    <a href="<?php echo $instagram?>" class="social">
                         <img title="instagram" src="<?php echo BANDQ_URL . '/img/instagram.png'; ?>" alt="<?php echo esc_attr__( 'instagram', 'bandq' ); ?>">
                     </a>
-                    <a href="#" class="social">
+                    <a href="<?php echo $facebook?>" class="social">
                         <img title="facebook" src="<?php echo BANDQ_URL . '/img/facebook.png'; ?>" alt="<?php echo esc_attr__( 'facebook', 'bandq' ); ?>">
                     </a>
                 </div>
