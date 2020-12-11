@@ -19,10 +19,11 @@ get_header(); ?>
 
 		<?php
 		if ( have_posts() ) :
-
+			
 			if ( is_home() && ! is_front_page() ) : ?>
 				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+					<h2 class="blog-page-title">Blog</h2>
+					<div class="sub-title">To learn more insights about the real estate market and how it works, take a look at our blog</div>
 				</header>
 
 			<?php
